@@ -1,6 +1,7 @@
 import {
   ResponsiveContainer,
-  LineChart,
+  ComposedChart,
+  Area,
   Line,
   Tooltip,
   ReferenceLine,
@@ -11,29 +12,29 @@ import {
 const CustomLineChart = ({ className, data, config, onClick }) => (
   <div style={{ height: config?.height || 300 }} className={className}>
     <ResponsiveContainer>
-      <LineChart
-        margin={{ top: 20, right: 20, bottom: 20, left: 20 }}
+      <ComposedChart
+        margin={{ left: -10 }}
         data={data}
         onClick={(payload) => {
           onClick(payload?.activePayload?.[0]?.payload);
         }}
       >
         <Tooltip />
-        <Line
-          dot={false}
-          type="natural"
-          dataKey={config?.dataKey}
-          stroke="#52616B"
-        />
+        {config.lines?.map((l) => (
+          <Line key={l.dataKey} dot={false} type="natural" {...l} />
+        ))}
+        {config.areas?.map((l) => (
+          <Area key={l.dataKey} dot={false} type="natural" {...l} />
+        ))}
         <ReferenceLine x={config?.xReference} stroke="#FF8576" />
-        <XAxis axisLine={false} tickLine={false} dataKey={config?.xAxis} />
+        <XAxis {...config?.xAxis} />
         <YAxis
           axisLine={false}
           tickLine={false}
           dataKey={config?.yAxis}
           tickMargin={10}
         />
-      </LineChart>
+      </ComposedChart>
     </ResponsiveContainer>
   </div>
 );

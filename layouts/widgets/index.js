@@ -9,9 +9,8 @@ const widgets = {
 
 const WidgetsLayout = () => {
   const [state, setState] = useState({
-    year: '2035',
-    scenario: 'business as usual',
-    risk: 'high risk',
+    year: '2030',
+    scenario: 'rcp4.5',
   });
 
   const Widgets = Object.keys(widgets)?.map((w) => ({
