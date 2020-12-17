@@ -51,6 +51,7 @@
     "no-underscore-dangle": "off",
     "no-restricted-globals": "off",
     "camelcase": "off",
-    "security/detect-object-injection": "off"
+    "security/detect-object-injection": "off",
+    "react/prop-types": "off"
   }
 }

@@ -1,17 +1,15 @@
 import Head from 'next/head';
-import styles from '../styles/Home.module.css';
 
-export default function Home() {
-  return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+import WidgetsLayout from 'layouts/widgets';
 
-      <main className={styles.main}>
-        <h1>My cool widgets</h1>
-      </main>
-    </div>
-  );
-}
+const Home = () => (
+  <div>
+    <Head>
+      <title>Widget framework demo</title>
+      <link rel="icon" href="/favicon.ico" />
+    </Head>
+    <WidgetsLayout />
+  </div>
+);
+
+export default Home;
