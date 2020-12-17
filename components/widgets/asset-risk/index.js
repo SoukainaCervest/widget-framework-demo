@@ -1,6 +1,7 @@
 import { get } from 'axios';
 import sumBy from 'lodash/sumBy';
 import { format } from 'd3-format';
+import { format as formatDate } from 'date-fns';
 
 import LineChart from 'components/charts/composed-chart';
 import DynamicSentence from 'components/sentence';
@@ -118,6 +119,8 @@ const WidgetAssetRisk = ({
               xAxis: {
                 dataKey: 'month',
                 interval: 0,
+                tickFormatter: (t) =>
+                  formatDate(new Date(`2020-${t > 9 ? t : `0${t}`}-01`), 'MMM'),
               },
               xReference: `${params?.year}`,
             }}
