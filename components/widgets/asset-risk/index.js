@@ -19,7 +19,7 @@ const parseData = (data) =>
     riskPct: d.id,
   }));
 
-export default ({ params, onChangeParam }) => (
+const WidgetAssetRisk = ({ params, onChangeParam }) => (
   <Widget name="asset-risk" getData={getData} parseData={parseData}>
     {({ data }) => {
       const { riskPct } = data?.find((d) => d.year === params?.year) || {};
@@ -50,3 +50,5 @@ export default ({ params, onChangeParam }) => (
     }}
   </Widget>
 );
+
+export default WidgetAssetRisk;
