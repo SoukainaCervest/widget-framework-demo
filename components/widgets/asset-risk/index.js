@@ -2,28 +2,11 @@ import { get } from 'axios';
 import sumBy from 'lodash/sumBy';
 import { format } from 'd3-format';
 
-import Select from 'react-select';
-
 import LineChart from 'components/charts/line-chart';
 import DynamicSentence from 'components/sentence';
 import Widget from 'components/widget';
 
 import styles from './styles.module.scss';
-
-const rcpYears = [
-  {
-    label: '2030',
-    value: '2030',
-  },
-  {
-    label: '2040',
-    value: '2040',
-  },
-  {
-    label: '2050',
-    value: '2050',
-  },
-];
 
 const rcpOptions = [
   {
@@ -86,18 +69,6 @@ const WidgetAssetRisk = ({
   >
     {({ data }) => (
       <div>
-        <div className={styles.settings}>
-          <Select
-            options={rcpYears}
-            value={rcpYears.find((y) => y.value === params?.year)}
-            onChange={(value) => onChangeParam({ year: value?.value })}
-          />
-          <Select
-            options={rcpOptions}
-            value={rcpOptions.find((y) => y.value === params?.scenario)}
-            onChange={(value) => onChangeParam({ scenario: value?.value })}
-          />
-        </div>
         <div className={styles.wrapper}>
           <DynamicSentence
             className={styles.sentence}
