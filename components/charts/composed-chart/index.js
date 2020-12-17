@@ -9,16 +9,10 @@ import {
   YAxis,
 } from 'recharts';
 
-const CustomComposedChart = ({ className, data, config, onClick }) => (
+const CustomComposedChart = ({ className, data, config }) => (
   <div style={{ height: config?.height || 300 }} className={className}>
     <ResponsiveContainer>
-      <ComposedChart
-        margin={{ left: -10 }}
-        data={data}
-        onClick={(payload) => {
-          onClick(payload?.activePayload?.[0]?.payload);
-        }}
-      >
+      <ComposedChart margin={{ left: -10 }} data={data}>
         <Tooltip />
         {config.lines?.map((l) => (
           <Line key={l.dataKey} dot={false} type="natural" {...l} />
