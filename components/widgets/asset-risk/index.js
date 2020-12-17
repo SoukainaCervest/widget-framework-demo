@@ -58,10 +58,7 @@ const parseData = ({ historicalData, rcpData } = {}) => {
   };
 };
 
-const WidgetAssetRisk = ({
-  params = { scenario: 'historical' },
-  onChangeParam,
-}) => (
+const WidgetAssetRisk = ({ params }) => (
   <Widget
     name="asset-risk"
     getData={getData}
@@ -124,8 +121,6 @@ const WidgetAssetRisk = ({
               },
               xReference: `${params?.year}`,
             }}
-            onClick={(payload) =>
-              onChangeParam({ year: payload?.year || params?.year })}
           />
         </div>
       </div>
