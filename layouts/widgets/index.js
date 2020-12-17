@@ -10,7 +10,7 @@ const widgets = {
 const WidgetsLayout = () => {
   const [state, setState] = useState({
     year: '2035',
-    scenario: 'business as ususal',
+    scenario: 'business as usual',
     risk: 'high risk',
   });
 

@@ -19,7 +19,12 @@ const CustomLineChart = ({ className, data, config, onClick }) => (
         }}
       >
         <Tooltip />
-        <Line type="natural" dataKey={config?.dataKey} stroke="#52616B" />
+        <Line
+          dot={false}
+          type="natural"
+          dataKey={config?.dataKey}
+          stroke="#52616B"
+        />
         <ReferenceLine x={config?.xReference} stroke="#FF8576" />
         <XAxis axisLine={false} tickLine={false} dataKey={config?.xAxis} />
         <YAxis
