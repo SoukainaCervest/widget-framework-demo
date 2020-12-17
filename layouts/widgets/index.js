@@ -22,11 +22,11 @@ const rcpYears = [
 
 const rcpOptions = [
   {
-    label: 'emissions stable by 2100',
+    label: 'Emissions stable by 2100',
     value: 'rcp4.5',
   },
   {
-    label: 'business as usual',
+    label: 'Business as usual',
     value: 'rcp8.5',
   },
 ];
