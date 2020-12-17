@@ -2,7 +2,7 @@ import { get } from 'axios';
 import sumBy from 'lodash/sumBy';
 import { format } from 'd3-format';
 
-import LineChart from 'components/charts/line-chart';
+import LineChart from 'components/charts/composed-chart';
 import DynamicSentence from 'components/sentence';
 import Widget from 'components/widget';
 

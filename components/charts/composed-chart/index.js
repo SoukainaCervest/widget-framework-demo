@@ -9,7 +9,7 @@ import {
   YAxis,
 } from 'recharts';
 
-const CustomLineChart = ({ className, data, config, onClick }) => (
+const CustomComposedChart = ({ className, data, config, onClick }) => (
   <div style={{ height: config?.height || 300 }} className={className}>
     <ResponsiveContainer>
       <ComposedChart
@@ -39,4 +39,4 @@ const CustomLineChart = ({ className, data, config, onClick }) => (
   </div>
 );
 
-export default CustomLineChart;
+export default CustomComposedChart;
