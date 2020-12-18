@@ -22,12 +22,7 @@ const CustomComposedChart = ({ className, data, config }) => (
         ))}
         <ReferenceLine x={config?.xReference} stroke="#FF8576" />
         <XAxis {...config?.xAxis} />
-        <YAxis
-          axisLine={false}
-          tickLine={false}
-          dataKey={config?.yAxis}
-          tickMargin={10}
-        />
+        <YAxis {...config?.yAxis} />
       </ComposedChart>
     </ResponsiveContainer>
   </div>

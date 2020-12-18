@@ -100,8 +100,6 @@ const WidgetAssetRisk = ({ params }) => (
                   stroke: '#555555',
                   opacity: 0.2,
                   strokeWidth: 0,
-                  background: false,
-                  activeDot: false,
                 },
                 {
                   dataKey: 'upperStddev',
@@ -109,8 +107,6 @@ const WidgetAssetRisk = ({ params }) => (
                   stroke: '#555555',
                   opacity: 0.2,
                   strokeWidth: 0,
-                  background: false,
-                  activeDot: false,
                 },
               ],
               xAxis: {
@@ -118,6 +114,13 @@ const WidgetAssetRisk = ({ params }) => (
                 interval: 0,
                 tickFormatter: (t) =>
                   formatDate(new Date(`2020-${t > 9 ? t : `0${t}`}-01`), 'MMM'),
+                axisLine: false,
+                tickLine: false,
+              },
+              yAxis: {
+                tickFormatter: (t) => `${t}°C`,
+                axisLine: false,
+                tickLine: false,
               },
               xReference: `${params?.year}`,
             }}
